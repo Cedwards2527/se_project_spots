@@ -56,7 +56,7 @@
   transition: smooth;
 }
 
-.btn__container {
+.profile__btn-container {
   margin: auto;
   display: flex;
   gap: 8px;
