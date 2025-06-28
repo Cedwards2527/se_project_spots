@@ -16,4 +16,4 @@ This project has a responsive design that starts with max-width of 1280px to dow
 
 This webpage is deployed on github pages.
 
--Deployment Link:
+- [Deployment Link] (https://cedwards2527.github.io/se_project_spots/)
