@@ -1,6 +1,6 @@
 .page__section {
   max-width: 1280px;
-  margin: auto;
+  margin: 0 auto;
 }
 .cards {
   padding: 20px 0 40px;
@@ -15,4 +15,10 @@
   grid-template-columns: repeat(auto-fit, 413px);
   justify-content: center;
   gap: 40px 20px;
+}
+
+@media screen and (max-width: 672px) {
+  .cards__list {
+    grid-template-columns: repeat(auto-fit, 288px);
+  }
 }
