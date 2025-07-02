@@ -9,12 +9,13 @@
 .card__title {
   margin: 0;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 1.2;
+  font-size: 20px;
+  line-height: 1;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   width: 288px;
+  color: #212121;
 }
 
 .card__like-btn {
@@ -25,6 +26,7 @@
   background-color: transparent;
   opacity: 40%;
   transition: 1s;
+  cursor: pointer;
 }
 .card__like-btn:hover {
   opacity: 100%;

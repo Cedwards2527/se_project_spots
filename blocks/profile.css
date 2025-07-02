@@ -5,11 +5,15 @@
   justify-content: space-between;
 }
 .profile__avatar {
+  width: 190px;
+  height: 190px;
+  object-fit: contain;
   border-radius: 8px;
   margin-right: 20px;
 }
 .profile__name {
   margin: 0 0 12px;
+  color: #212121;
   font-weight: 500;
   font-size: 32px;
   line-height: 1;
@@ -21,6 +25,7 @@
   max-width: 420px;
 }
 .profile__description {
+  color: #212121;
   margin: 0;
   font-size: 16px;
   line-height: 1;
@@ -39,11 +44,12 @@
 }
 .profile__edit-btn {
   display: flex;
-  background-color: #fcf5e5;
+  background-color: transparent;
   margin-top: auto;
   border: none;
   padding: 0;
-
+  gap: 8px;
+  cursor: pointer;
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
@@ -66,10 +72,11 @@
   line-height: 1;
   font-size: 16px;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .profile__plus-btn:hover {
-  opacity: 70%;
+  opacity: 80%;
   transition: smooth;
 }
 
