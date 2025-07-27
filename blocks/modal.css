@@ -10,11 +10,16 @@
   bottom: 0;
   left: 0;
   padding: 10px;
+  opacity: 0;
+  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
 
 .modal_is-opened {
   visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
 }
+
 .modal__container {
   position: relative;
   background-color: #ffff;
