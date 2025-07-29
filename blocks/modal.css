@@ -42,6 +42,11 @@
   border: none;
 }
 
+.modal__close-btn:hover {
+  opacity: 100%;
+  transition: smooth;
+}
+
 .modal__title {
   margin: 0 0 32px;
   font-weight: 500;
@@ -59,6 +64,7 @@
 }
 
 .modal__input {
+  border: 1px solid #21212166;
   width: 100%;
   margin: 8px 0 0;
   padding: 16px 12px;
@@ -84,7 +90,14 @@
   font-weight: 500;
   line-height: 1;
   font-size: 16px;
+  cursor: pointer;
 }
+
+.modal_save-btn :hover {
+  opacity: 80%;
+  transition: smooth;
+}
+
 .modal__input::placeholder {
   color: #212121;
   opacity: 30%;

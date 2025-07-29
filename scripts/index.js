@@ -60,6 +60,7 @@ function handleAddCardSubmit(evt) {
   console.log(newPostTitleInput.value);
 
   closeModal(newPostModal);
+  evt.target.reset();
 }
 
 addCardFormElement.addEventListener("submit", handleAddCardSubmit);
