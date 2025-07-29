@@ -43,6 +43,7 @@
 }
 
 .modal__close-btn:hover {
+  cursor: pointer;
   opacity: 100%;
   transition: smooth;
 }
@@ -93,7 +94,7 @@
   cursor: pointer;
 }
 
-.modal_save-btn :hover {
+.modal__save-btn :hover {
   opacity: 80%;
   transition: smooth;
 }
