@@ -44,6 +44,7 @@
   color: #212121;
   opacity: 40%;
   border: none;
+  cursor: pointer;
 }
 .modal__close-btn_type-preview {
   top: 0;
@@ -56,12 +57,11 @@
 .modal__close-btn:hover {
   cursor: pointer;
   opacity: 100%;
-  transition: smooth;
+  transition: opacity 0.3 ease;
 }
 
 .modal__close-btn_type-preview:hover {
   opacity: 0.4;
-  transition: smooth;
 }
 
 .modal__title {
@@ -112,7 +112,7 @@
 
 .modal__save-btn:hover {
   opacity: 80%;
-  transition: smooth;
+  transition: opacity 0.3 ease;
 }
 
 .modal__input::placeholder {
@@ -134,6 +134,9 @@
 }
 
 .modal__caption {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 10px);
   color: white;
   width: 198px;
   height: 24px;

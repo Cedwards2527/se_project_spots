@@ -9,6 +9,7 @@
   object-fit: cover;
   border-radius: 8px;
   margin: 0 0 12px;
+  cursor: pointer;
 }
 .card__title {
   margin: 0;
@@ -18,7 +19,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  width: 288px;
+  max-width: 353px;
   color: #212121;
 }
 
@@ -33,12 +34,11 @@
   background-color: transparent;
   color: #0000;
   cursor: pointer;
-  transition: 1s;
 }
 
 .card__delete-btn:hover {
   background-image: url("../images/delete-hover.svg");
-  transition: smooth;
+  transition: background-image 0.3s ease;
 }
 
 .card__like-btn {
@@ -59,7 +59,7 @@
 
 .card__like-btn:hover {
   opacity: 100%;
-  transition: smooth;
+  transition: opacity 0.3s ease;
 }
 
 .card__like-btn_active:hover {
