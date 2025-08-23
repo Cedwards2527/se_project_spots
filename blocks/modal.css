@@ -98,12 +98,17 @@
 }
 
 .modal__error {
+  visibility: hidden;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.1;
   margin-top: 8px;
   color: #ff0000;
   opacity: 70%;
+}
+
+.modal__error_visible {
+  visibility: visible;
 }
 
 .modal__label {
