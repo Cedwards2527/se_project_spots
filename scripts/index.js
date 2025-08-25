@@ -32,8 +32,8 @@ const initialCards = [
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
-const editProfileForm = editProfileModal.querySelector(".modal__form");
-const editProfileSubmit = editProfileModal.querySelector(".modal__save-btn");
+const editProfileForm = document.forms["edit-profile-form"];
+const editProfileSubmit = editProfileModal.querySelector(".modal__submit-btn");
 const editProfileNameInput = editProfileModal.querySelector(
   "#profile-name-input"
 );
@@ -45,7 +45,7 @@ const newPostBtn = document.querySelector(".profile__plus-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const addCardFormElement = newPostModal.querySelector(".modal__form");
-const addCardSubmitBtn = newPostModal.querySelector(".modal__save-btn");
+const addCardSubmitBtn = newPostModal.querySelector(".modal__submit-btn");
 const profileNameElement = document.querySelector(".profile__name");
 const profileDescriptionElement = document.querySelector(
   ".profile__description"
@@ -113,22 +113,18 @@ function closeModal(modal) {
 editProfileBtn.addEventListener("click", () => {
   editProfileNameInput.value = profileNameElement.textContent;
   editProfileDescriptionInput.value = profileDescriptionElement.textContent;
-
+  resetValidation(editProfileForm, settings);
   openModal(editProfileModal);
 });
 
-editProfileCloseBtn.addEventListener("click", () => {
-  closeModal(editProfileModal);
-});
-newPostBtn.addEventListener("click", () => {
-  openModal(newPostModal);
-});
-newPostCloseBtn.addEventListener("click", () => {
-  closeModal(newPostModal);
+const closeButtons = document.querySelectorAll(".modal__close-btn");
+closeButtons.forEach((button) => {
+  const modal = button.closest(".modal");
+  button.addEventListener("click", () => closeModal(modal));
 });
 
-previewCloseBtn.addEventListener("click", () => {
-  closeModal(previewModal);
+newPostBtn.addEventListener("click", () => {
+  openModal(newPostModal);
 });
 
 const modals = document.querySelectorAll(".modal");
@@ -144,7 +140,6 @@ function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   profileNameElement.textContent = editProfileNameInput.value;
   profileDescriptionElement.textContent = editProfileDescriptionInput.value;
-  disableButton(editProfileSubmit, settings);
   closeModal(editProfileModal);
 }
 

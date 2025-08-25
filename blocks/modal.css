@@ -119,7 +119,7 @@
   font-size: 16px;
 }
 
-.modal__save-btn {
+.modal__submit-btn {
   height: 52px;
   max-width: 156px;
   border-radius: 8px;
@@ -131,11 +131,12 @@
   cursor: pointer;
 }
 
-.modal__save-btn-disabled {
+.modal__submit-btn_disabled {
   background-color: #808080;
+  pointer-events: none;
 }
 
-.modal__save-btn:hover {
+.modal__submit-btn:hover {
   opacity: 80%;
   transition: opacity 0.3 ease;
 }
@@ -200,7 +201,7 @@
   .modal__input {
     font-size: 16px;
   }
-  .modal__save-btn {
+  .modal__submit-btn {
     max-width: none;
     margin-right: -32px;
   }
