@@ -182,24 +182,33 @@ function handleAvatarSubmit(evt) {
     });
 }
 
-editProfileForm.addEventListener("submit", handleEditProfileSubmit);
-
-function handleAddCardSubmit(evt) {
+function handleCreateCardsSubmit(evt) {
   evt.preventDefault();
-
-  const inputValues = {
+  const createCardInputValues = {
     name: newPostTitleInput.value,
     link: newPostLinkInput.value,
   };
-  const cardElement = getCardElement(inputValues);
-  cardsList.prepend(cardElement);
-  evt.target.reset();
-  disableButton(addCardSubmitBtn, validationConfig);
-  closeModal(newPostModal);
+  api
+    .createCards({
+      name: createCardInputValues.name,
+      link: createCardInputValues.link,
+    })
+    .then((data) => {
+      const cardElement = getCardElement(createCardInputValues);
+      cardsList.prepend(cardElement);
+      evt.target.reset();
+      disableButton(addCardSubmitBtn, validationConfig);
+      closeModal(newPostModal);
+    })
+    .catch((err) => {
+      console.error("Card upadte error:", err);
+    });
 }
+
+editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 avatarForm.addEventListener("submit", handleAvatarSubmit);
 
-addCardFormElement.addEventListener("submit", handleAddCardSubmit);
+addCardFormElement.addEventListener("submit", handleCreateCardsSubmit);
 
 enableValidation(validationConfig);
