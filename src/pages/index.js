@@ -83,16 +83,46 @@ function getCardElement(data) {
     .cloneNode(true);
   const cardTitle = cardElement.querySelector(".card__title");
   const cardImage = cardElement.querySelector(".card__image");
+  const cardLikeBtn = cardElement.querySelector(".card__like-btn");
+
+  if (data.isLiked) {
+    cardLikeBtn.classList.add("card__like-btn_active");
+  }
 
   cardImage.src = data.link;
   cardImage.alt = data.name;
   cardTitle.textContent = data.name;
 
-  const cardLikeBtn = cardElement.querySelector(".card__like-btn");
-  const handleCardLikeBtn = () => {
-    cardLikeBtn.classList.toggle("card__like-btn_active");
-  };
-  cardLikeBtn.addEventListener("click", handleCardLikeBtn);
+  function toggleLikeButton(isLiked) {
+    if (isLiked) {
+      cardLikeBtn.classList.add("card__like-btn_active");
+    } else {
+      cardLikeBtn.classList.remove("card__like-btn_active");
+    }
+  }
+    function handleCardLikeBtn(evt, id) {
+    const isLiked = cardLikeBtn.classList.contains("card__like-btn_active");
+
+    if (isLiked) {
+      api
+        .changeLikeStatus(id, true)
+        .then((data) => {
+          toggleLikeButton(false);
+        })
+        .catch(console.error);
+    } else {
+      api
+        .changeLikeStatus(id, false)
+        .then((data) => {
+          toggleLikeButton(true);
+        })
+        .catch(console.error);
+    }
+  }
+
+  cardLikeBtn.addEventListener("click", (evt) =>
+    handleCardLikeBtn(evt, data._id)
+  );
 
   const cardDeleteBtn = cardElement.querySelector(".card__delete-btn");
   const handleCardDeleteBtn = (cardElement, cardId) => {
