@@ -184,10 +184,12 @@ function handleAvatarSubmit(evt) {
 
 function handleCreateCardsSubmit(evt) {
   evt.preventDefault();
+
   const createCardInputValues = {
     name: newPostTitleInput.value,
     link: newPostLinkInput.value,
   };
+
   api
     .createCards({
       name: createCardInputValues.name,
