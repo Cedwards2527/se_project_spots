@@ -55,8 +55,10 @@ const avatarForm = avatarModal.querySelector(".modal__form");
 const avatarSubmitBtn = avatarModal.querySelector(".modal__submit-btn");
 const avatarCloseBtn = avatarModal.querySelector(".modal__close-btn");
 const avatarInput = avatarModal.querySelector("#profile-avatar-input");
-
 const deleteModal = document.querySelector("#delete-modal");
+
+let selectedCard;
+let selectedCardId;
 
 api
   .getAppInfo()
@@ -91,10 +93,14 @@ function getCardElement(data) {
   cardLikeBtn.addEventListener("click", handleCardLikeBtn);
 
   const cardDeleteBtn = cardElement.querySelector(".card__delete-btn");
-  const handleCardDeleteBtn = () => {
+  const handleCardDeleteBtn = (cardElement, cardId) => {
+    selectedCard = cardElement;
+    selectedCardId = cardId;
     openModal(deleteModal);
   };
-  cardDeleteBtn.addEventListener("click", handleCardDeleteBtn);
+  cardDeleteBtn.addEventListener("click", (evt) =>
+    handleCardDeleteBtn(cardElement, data._id)
+  );
 
   cardImage.addEventListener("click", () => {
     previewModalImage.src = data.link;
