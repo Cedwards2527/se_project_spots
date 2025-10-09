@@ -43,7 +43,6 @@ class Api {
       return Promise.reject(`Error: ${res.status}`);
     });
   }
-  // other methods for working with the API
 
   editUserInfo({ name, about }) {
     return fetch(`${this._baseUrl}/users/me`, {
@@ -75,6 +74,11 @@ class Api {
     });
   }
   deleteCard(id) {
+    console.log("API deleteCard called with ID:", id);
+    console.log("Type of ID:", typeof id);
+
+    // Log it right before using it
+    console.log("About to use ID in URL:", id);
     return fetch(`${this._baseUrl}/cards/${id}`, {
       method: "DELETE",
       headers: this._headers,
