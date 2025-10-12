@@ -29,10 +29,11 @@
   align-items: flex-end;
   justify-content: center;
   visibility: hidden;
+  cursor: pointer;
 }
 .profile__avatar-container:hover .profile__avatar-btn {
   visibility: visible;
-  color: #000;
+  background-color: #000;
   opacity: 50%;
   border-radius: 8px;
 }
@@ -43,6 +44,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 1;
+  opacity: 1;
 }
 
 .profile__name {
@@ -88,7 +90,7 @@
   font-weight: 500;
   line-height: 1;
   opacity: 70%;
-  transition: 1s;
+  transition: 0.5s;
 }
 .profile__edit-btn:hover {
   opacity: 100%;
@@ -103,7 +105,7 @@
   background-color: #212121;
   color: #fcf5e5;
   border-radius: 8px;
-  transition: 1s;
+  transition: opacity 0.5s;
   line-height: 1;
   font-size: 16px;
   font-weight: 500;
@@ -131,11 +133,31 @@
   }
 
   .profile__avatar-btn {
-    visibility: visible;
-
+    visibility: hidden;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
     gap: 8px;
     color: #212121;
     opacity: 60px;
+    width: 23.34px;
+    height: 23.34px;
+    top: 52px;
+    left: 52px;
+    padding: 4px;
+    gap: 6px;
+    gap: 8px;
+  }
+
+  .profile__pencil-icon {
+    width: 18.48px;
+    height: 18.21px;
+    position: absolute;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    top: 2px;
+    left: 2px;
   }
 
   .profile__avatar-btn:after {
