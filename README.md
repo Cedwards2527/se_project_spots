@@ -8,7 +8,7 @@ This project has a responsive design that starts with max-width of 1280px down t
 
 ![full-sreen](src/images/full_project_img.png)
 
-![half](src/images/images/half_project_img.png)
+![half](src/images/half_project_img.png)
 
 ![small](src/images/small_project_img.png)
 
